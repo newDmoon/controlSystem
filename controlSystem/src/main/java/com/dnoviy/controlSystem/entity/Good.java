@@ -1,19 +1,64 @@
 package com.dnoviy.controlSystem.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "goods")
 public class Good {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String qrCode;
+    private String code;
+    private Integer stock;
+
+    @Enumerated(EnumType.STRING)
+    private EGoodType goodType;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Company company;
 
     public Good() {
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public EGoodType getGoodType() {
+        return goodType;
+    }
+
+    public void setGoodType(EGoodType goodType) {
+        this.goodType = goodType;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Long getId() {
@@ -32,11 +77,4 @@ public class Good {
         this.name = name;
     }
 
-    public String getQrCode() {
-        return qrCode;
-    }
-
-    public void setQrCode(String qrCode) {
-        this.qrCode = qrCode;
-    }
 }

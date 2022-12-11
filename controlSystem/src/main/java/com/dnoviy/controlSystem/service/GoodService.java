@@ -5,7 +5,11 @@ import com.dnoviy.controlSystem.entity.Good;
 import java.util.List;
 
 public interface GoodService {
-    public Good saveGood(Good good);
-    public List<Good> getAllGoods();
-    public Good getOneGood(Long id);
+    Good saveGood(Good good);
+
+    List<Good> getAllGoods();
+
+    Good getOneGood(Long id);
+
+    String deleteOneGood(Long id);
 }

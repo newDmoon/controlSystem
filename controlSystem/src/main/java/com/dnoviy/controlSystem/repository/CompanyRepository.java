@@ -1,9 +1,9 @@
 package com.dnoviy.controlSystem.repository;
 
-import com.dnoviy.controlSystem.entity.Good;
+import com.dnoviy.controlSystem.entity.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GoodRepository extends JpaRepository<Good, Long> {
+public interface CompanyRepository extends JpaRepository<Company, Long> {
 }
