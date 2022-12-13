@@ -1,13 +1,18 @@
 package com.dnoviy.controlSystem.service;
 
+import com.dnoviy.controlSystem.entity.Person;
 import com.dnoviy.controlSystem.entity.User;
 
 import java.util.List;
 
 public interface UserService {
-    public User saveUser(User user);
+    List<User> getAllUsers();
 
-    public List<User> getAllUsers();
+    User deleteUser(Long id);
 
-    public User deleteUser(User user);
+    User getOneUser(Long id);
+
+    User updatePersonInfo(User user);
+
+    Person getPersonDetails(Long id);
 }

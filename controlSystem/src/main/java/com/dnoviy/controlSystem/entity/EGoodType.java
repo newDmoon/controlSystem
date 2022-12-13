@@ -9,7 +9,4 @@ public enum EGoodType {
     EGoodType(String type) {
         this.type = type;
     }
-
-    EGoodType() {
-    }
 }

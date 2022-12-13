@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface CompanyService {
     List<Company> getAllCompanies();
-    Company getOneCompany(Long id);
+    Company getOneCompanyByManager(Long managerId);
     Company updateCompany(Company company);
+    Company getOneCompanyByCompanyId(Long companyId);
+    String deleteCompany(Long id);
 }

@@ -1,5 +1,7 @@
 package com.dnoviy.controlSystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +21,7 @@ public class Person {
     private int age;
 
     @OneToOne(mappedBy = "person")
+    @JsonIgnore
     private User user;
 
     public Person() {
